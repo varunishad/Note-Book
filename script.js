@@ -1,8 +1,10 @@
+// variable declaration
 
     let addTxt = document.getElementById("addTxt");
     let addBtn = document.getElementById("addBtn");
     let title = document.getElementById("addTitle");
 
+// Disable and Enable 'Add' button 
     function disableFun() {
         if (addTxt.value.trim().length > 0) {
             addBtn.disabled = false;
@@ -12,6 +14,9 @@
     }
 
     showNotes();
+
+// add note to local storage and display below
+
     addBtn.addEventListener('click', function () {
         if (addTxt.value.trim().length > 0) {
             let notes = localStorage.getItem('notes');
@@ -65,6 +70,8 @@
         let notesElm = document.getElementById('notes');
         notesElm.innerHTML = html;
     }
+    
+    // Delete button function
 
     function deleteThis(i) {
         let notes = localStorage.getItem('notes');
